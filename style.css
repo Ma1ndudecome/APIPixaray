@@ -1,0 +1,247 @@
+html, body{
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url(img/background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+
+.container {
+    display: grid;
+    width: 99%;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+    margin-top: 30px;
+   
+}
+.form{
+    display: flex;
+    width:30%;
+}
+.border-image>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.container-Form{
+    display: flex;
+    justify-content: center;
+    transform: translateY(20px);
+}
+
+input[type="text"]{
+    border: none;
+    outline: none;
+    width: 100%;
+    border-radius: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+
+}
+input[type="submit"]{
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    background-color: rgb(96, 236, 31);
+    cursor: pointer;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.submit-container {
+    position: relative;
+}
+.spinner {
+    display: none; 
+    position: absolute;
+    top: 50%;
+    left: 12px; 
+    width: 15px;
+    height: 15px;
+    border: 2px solid transparent;
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    transform: translateY(-50%);
+}
+
+.Show-More{
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    background-color: rgb(26, 179, 199);
+    cursor: pointer;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 25px;
+    padding-right: 10px;
+    color:white;
+    opacity:0;
+    visibility: hidden;
+    position: relative;
+}
+@keyframes spin {
+    from {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+.centerButton{
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.border-image{
+    width: 95%;
+    height: 300px;
+    border: 3px solid black;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.shows{
+    opacity: 1;
+    visibility: visible;
+}
+.spinnerShowMore {
+    display: none; 
+    position: absolute;
+    top: 50%;
+    left: 3px; 
+    width: 15px;
+    height: 15px;
+    border: 2px solid transparent;
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    transform: translateY(-50%);
+}
+.loading{
+    display: inline-block; 
+}
+.border-image:hover{
+    transition: 0.5s;
+   transform: translateY(-5px);
+
+    
+}
+.backdrop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top:0;
+    left: 0;
+    bottom:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    z-index: 1000;
+    transition: 0.5s;
+}
+.main-border{
+    width: 70%;
+    height: 80%;
+}
+.main-border>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.none{
+    opacity: 0;
+    visibility: hidden;
+}
+::-webkit-scrollbar{
+    width: 7px;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #d4a6e6;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #68e1f1;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #39a0b3;
+  }
+@media (max-width:1024px) {
+    .container{
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        height: 20px;
+        font-size: 12px;
+    }
+    .border-image{
+        width: 80%;
+        height: 200px;
+    }
+    ::-webkit-scrollbar{
+        width: 4px;
+    }
+    input[type="submit"] {
+        padding-top: 3px;
+        padding-bottom: 3px;
+        font-size: 12px;
+
+    }
+    .form{
+        width: 50%;
+    }
+}
+@media (max-width:568px) {
+    .container{
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+    }
+    .border-image{
+        width: 75%;
+        height: 250px;
+    }
+    .form{
+        width: 60%;
+    }
+}
+@media (max-width:468px) {
+    .container{
+        grid-template-columns: repeat(1, 1fr);
+        place-items: center;
+    }
+    .border-image{
+        width: 60%;
+        height: 300px;
+    }
+}
+@media (max-width:385px) {
+    input[type="submit"] {
+        font-size: 10px;
+    }
+    input[type="text"] {
+        
+        width: 100%;
+    }
+}
